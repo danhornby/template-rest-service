@@ -1,0 +1,25 @@
+{
+  "name": "template-rest-service",
+  "version": "1.0.0",
+  "description": "Template service for building out pipeline for different REST service",
+  "main": "index.js",
+  "dependencies": {
+    "bah": "^1.0.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danhornby/template-rest-service.git"
+  },
+  "author": "Dan Hornby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danhornby/template-rest-service/issues"
+  },
+  "homepage": "https://github.com/danhornby/template-rest-service#readme"
+}
