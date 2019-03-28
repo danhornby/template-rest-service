@@ -1,26 +1,21 @@
 var fs = require('fs');
-var response = {};
 
-fs.readFile(__dirname + '/../metadata.json', function (err, data)
-{
-    if (err) {
-        throw err;
-    }
-    response = JSON.parse(data);
-    //Grab the args to find the value for the build sha
+function setStatusResponse() {
+    var statusResponse = {}
     const args = require('minimist')(process.argv.slice(2));
-    response["lastcommitsha"] = args.v;
-    console.log("Created response for route '/status': %s", JSON.stringify(response));
-})
-
-
+    statusResponse = JSON.parse(fs.readFileSync(__dirname + '/status-metadata.json'));
+    statusResponse["lastcommitsha"] = args.s;
+    return statusResponse
+}
 
 var appRouter = function(app) {
     app.get("/", function(req, res) {
         res.send("Hello World");
     });
+    resp = setStatusResponse();
+    console.log("Created response for route '/status': %s", JSON.stringify(resp));
     app.get("/status", function(req, res) {
-        res.send(response);
+        res.send(resp);
     });
 }
 
