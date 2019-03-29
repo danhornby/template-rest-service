@@ -6,7 +6,7 @@ build:
 
 release: 
 	docker tag danno123/template-rest-service:$(TRAVIS_BUILD_NUMBER) danno123/template-rest-service:latest
-	@echo $(dockerhub_password) | docker login -u $(dockerhub_username) --password-stdin
+	@echo $(DOCKERHUB_PASSWORD) | docker login -u danno123 --password-stdin
 	docker push danno123/template-rest-service:$(TRAVIS_BUILD_NUMBER)
 	docker push danno123/template-rest-service:latest
 

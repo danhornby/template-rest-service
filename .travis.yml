@@ -5,11 +5,7 @@ services:
 - docker
 jobs:
   include:
-  - stage: build and test javascript components
-    script:
-    - npm build
-    - npm test
-  - stage: build and release docker components
+  - stage: build and test js (default behaviour) then build and release docker
     script:
     - make build
     - make release
