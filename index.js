@@ -6,6 +6,6 @@ port = process.env.PORT || 8020;
 
 var routes = require("./routes/routes.js")(app);
 
-var server = app.listen(port, function() {
-    console.log("RESTful API server started on port: %s", server.address().port);
+module.exports = app.listen(port, function() {
+    console.log("RESTful API server started on port: %s", port);
 });
