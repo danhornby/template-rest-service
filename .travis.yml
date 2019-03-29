@@ -5,12 +5,14 @@ services:
 - docker
 jobs:
   include:
-  - stage: build and test js modules then build and release docker images
-    script:
-    - make install_node_modules
-    - make test_node_modules
-    - make build
-    - make release
+    - stage: build
+      script: npm install
+    - stage: test
+      script: npm test
+    - stage: build docker
+      script: make build
+    - stage: publish docker image to docker hub
+      script: make publish
 env:
   matrix:
     secure: X8QJDj4fu6D3i+55VYUWOc4/BqxtoIrAtO1V/nMn0p2w2y0BBYcS7NRN82yVzASmLIpJPJ86CRgVkSfwk6800dv6pm6FpxCZpz2tndLOvjsohpiyhSq2ASLHT2SJPTNpPU6Qws+X/KmkJ7YZkfsuCOTQQG9lI3L7Cdi0zl/wT4im9bnY+V5Z40FgMW0KsaJDyuaN3OO4P50Uy2+8eZ755uSwUu/xUKo2bhjvUtUHehP6bHGus/Y4ZL+n+X3MV4N1jS9P5gIB6vMPoTdQlExAoAQACPg5bc5RibBVvS0VUn7Du1vGsc/WR4N3UwIe84KfkiJFUlatVGjIwFePQxDXRW2rOMXQYCKPOudOSj71KSNLHu+V5JXv+Oj93I2ya+rGS1VAwR7tM4wV5rfPl+hfs+Vu2Nn5Ae6roQDCmAfiqCXuIdednzQCc6G8wYjUfSDQHeuSsH2MtkKwYzbAOIXBw9IiTDaYTqKYsy0Ri1yYK1GWF3YOIWSFQmWKul8vVuRM91PJkLz8vTmS53IxnZdioquswxf9kYWFlimYI3sDG1FtNDCwU5JPA3KoqKambqg/MM+YIu70kci5nwtjcGHXJc7HhtK7wRN5qMDwd2KqBmeUp+Woyxor2MBYTA8lLQ+ZeOOsaJH9upe2w1l+7xCuP7RqEWcyiVoW2Hmpd0+XQZU=

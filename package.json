@@ -4,7 +4,6 @@
   "description": "Template service for building out pipeline for different REST service",
   "main": "index.js",
   "dependencies": {
-    "bah": "^1.0.0",
     "express": "^4.16.4",
     "nodemon": "^1.18.10"
   },
