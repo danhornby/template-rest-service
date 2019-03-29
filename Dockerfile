@@ -7,6 +7,8 @@ RUN npm build
 # And then copy over node_modules, etc from that stage to the smaller base image
 FROM mhart/alpine-node:base-8
 WORKDIR /app
+ARG SHA
+ENV sha=$SHA
 COPY --from=0 /app .
 COPY . .
 EXPOSE 8020
