@@ -3,9 +3,9 @@ node_js:
   - "10"
 services:
   - docker
-build_docker:
-  provider: script
-  script: make
-release_docker:
-  provider: script
-  script: make release
+jobs:
+  include:
+    - stage: build docker
+      script: make build
+    - stage: release docker
+      script: make release
