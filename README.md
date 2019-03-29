@@ -46,18 +46,23 @@ This will take the sha and pass it to the app.
 
 Builds for this repo can be found here: https://travis-ci.org/danhornby/template-rest-service/builds
 
-The build runs in 4 stages:
+The build runs in 2 stages/parts:
 
-```
-    - stage: build
-      script: npm install
-    - stage: test
-      script: npm test
-    - stage: build docker
-      script: make build
-    - stage: publish docker image to docker hub
-      script: make publish
-```
+#### install and test
+
+- scripts 
+    - npm install
+    - npm test
+
+```npm install``` installs all of the node modules required by the app.
+
+```npm test``` runs the app and then tests it to ensure that the server is working and all code paths are working to produce the / and /status responses as expected.
+
+#### build and publish
+
+- scripts
+    - make build
+    - make publish
 
 
 ```make build``` is used to put together the docker image (based on the apline linux node base found here https://github.com/mhart/alpine-node/) which will contain an app that will always run with the 'current' git build sha getting returned by the /status/ of the application. The docker image number will correspond to the build number in travis ci.
