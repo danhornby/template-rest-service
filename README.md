@@ -69,9 +69,17 @@ The build runs in 2 stages/parts:
 
 ```make publish``` pushes the runtime (second stage of the multistage docker) the dockerhub repo here: https://cloud.docker.com/repository/docker/danno123/template-rest-service/tags 
 
-#### Updating the secrets
+#### Updating the secret for travis
 
+One secret is used in the build (the password to dockerhub - set as an env var called ```DOCKERHUB_PASSWORD```). To re-encrypt this use the method here: https://docs.travis-ci.com/user/environment-variables/#defining-encrypted-variables-in-travisyml 
 
+To do this install travis and run:
+```
+travis encrypt DOCKERHUB_PASSWORD=super_secret --add env.matrix
+```
+Then save/push the changes to the .travis.yml.
+
+(Note the username is also in the Makefile.)
 
 ## Further considerations
 
