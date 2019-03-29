@@ -3,6 +3,9 @@ SHA=$(shell git rev-parse --short HEAD)
 build:
 	docker build -t "template-rest-service" --build-arg SHA=$(SHA) .
 
+test:
+	@echo "Tests go here"
+
 run:
 	docker run -p 127.0.0.1:8020:8020/tcp template-rest-service
 
