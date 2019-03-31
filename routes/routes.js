@@ -3,7 +3,7 @@ const args = require('minimist')(process.argv.slice(2));
 
 function buildStatusResp(){
     var statusResp = {};
-    statusResp = JSON.parse(fs.readFileSync(__dirname + '/status-metadata.json'));
+    statusResp = JSON.parse(fs.readFileSync(__dirname + '/../config/status-metadata.json'));
     statusResp["lastcommitsha"] = args.s || 'no-sha-supplied';
     console.log("Created response for route '/status': %s", JSON.stringify(statusResp));    
     return statusResp

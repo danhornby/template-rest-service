@@ -31,16 +31,11 @@ npm test
 ### Run
 And to run the app run command:
 ```
-node index.js
+npm start
 ```
 By default the web server will start on port 8020 and to browse the service you can go to http://localhost:8020.
 To change the port you can export or set an environment variable called ```PORT``` to the required port.
 
-Alternately, as the status uses a sha from the last git commit, you can run command:
-```
-make run
-```
-This will take the sha and pass it to the app.
 
 ## Build, test and publish via Travis-CI
 

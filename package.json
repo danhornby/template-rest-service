@@ -13,7 +13,8 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "make run"
   },
   "repository": {
     "type": "git",
