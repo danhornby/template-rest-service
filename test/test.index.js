@@ -1,12 +1,16 @@
+/* eslint-disable no-console */
+/* eslint-env node */
+/* eslint-env mocha */
+
 const assert = require('assert');
 const expect = require('chai').expect
 const request = require('supertest');
-
+var server = {};
 
 describe('GET /', function () {
-  before('Before the first test we ll start', function() {
+  before('Before the first test we ll start', function () {
     console.log('Before the first test start the web server.')
-    var server = require('../index.js');
+    server = require('../index.js');
   });
   it('should return OK status', function () {
     return request(server)

@@ -84,4 +84,5 @@ Then save/push the changes to the .travis.yml.
 4. The docker image and app is not 'hardened'. Consideration should be given to the security standards of the team and the context (sensistivity) to which the services run. As a minimum stable local repositories should be used instead of public ones and SSL/TLS should come as standard.
 5. Branch strategy is currently not in place within the repo/build/publish. GitFlow is the most common method of doing this and using branch protection and filters in the build pipeline should be considered, designed and built. A lot of this would be dependent on how the team currently works.
 6. How this patern is shared/managed needs to be considered. Modularisation of this codebase should be considered.
+7. Logging needs to be considered for the app: At the moment only minimal server logging (console.log) is implemented. Frameworks for logging will depend on the target environment and non-functional requirements for the application.
 
