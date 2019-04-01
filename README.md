@@ -1,5 +1,7 @@
 # template-rest-service
 
+[![Build Status](https://travis-ci.org/danhornby/template-rest-service.svg?branch=master)](https://travis-ci.org/danhornby/template-rest-service)
+
 ## Summary
 
 Sample nodejs Boilerplate Repository for Innablr Technical Challenge.
